@@ -1,0 +1,167 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.toolbar {
+  background-color: rgba(0, 0, 0, 0.4); /* 调整为与你的颜色匹配 */
+  color: white;
+  padding: 0rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-right: 0.5rem;
+  padding-left: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 1rem; /* 设置字体大小 */
+  text-decoration: none; /* 移除文字下划线（如果需要） */
+  font-weight:300;
+  vertical-align: middle;
+  line-height: 1rem;
+}
+.toolbar .left-section a,
+.toolbar .right-section a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px; /* 或者根据需要调整 */
+  margin-top: 0px;
+  padding-top:0%
+}
+.toolbar .right-section {
+  display: flex;
+  align-items: center;
+}
+.toolbar img {
+  margin-right: 0px; /* 图像间距 */
+  vertical-align: middle; 
+}
+.toolbar .time {
+  margin-right: 0px;
+  padding-right: 3px;
+  top: 10px;       /* 距离顶部的距离 */
+  right: 10px;     /* 距离右侧的距离 */
+}
+.icon {
+  width: 1.5rem;  /* 设置图标的宽度 */
+  height: 1.5rem; /* 设置图标的高度 */
+}
+#video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  margin-top: 0px;
+}
+.image-container {
+  text-align: center; /* 如果需要，可以设置文字居中 */
+}
+
+.image-container p {
+  margin-top: 10px; /* 设置图片和文字之间的距离 */
+}
+.interactive-img {
+  width: 10vw; /* 图片宽度为视口宽度的 50% */
+  height: auto; /* 高度自动调整以保持图片的比例 */
+  position: absolute; /* 允许图片自由移动 */
+  cursor: move; /* 显示可移动的光标图标 */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* 半透明背景 */
+}
+
+.modal-content {
+    margin: 10% auto;
+    display: block;
+    width: 80%;
+    max-width: 600px; /* 控制放大后图片的最大宽度 */
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.close-modal-area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+@keyframes shake {
+  0%, 100% {
+      transform: translate(0, 0);
+  }
+  10% {
+      transform: translate(-5px, -5px);
+  }
+  20% {
+      transform: translate(5px, 5px);
+  }
+  30% {
+      transform: translate(-5px, 5px);
+  }
+  40%, 50% {
+      transform: translate(5px, -5px);
+  }
+  60% {
+      transform: translate(-5px, 5px);
+  }
+  70% {
+      transform: translate(5px, 5px);
+  }
+  80% {
+      transform: translate(-5px, -5px);
+  }
+  90% {
+      transform: translate(5px, -5px);
+  }
+}
+.interactive-img.shake-on-click:active {
+  animation: shake 0.5s;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dock {
+  position: fixed;
+  bottom: 0.5%;
+  left: 20%; /* 由于宽度是70%，所以两边各留15% */
+  width: 60%;
+  height: 8%;
+  border-radius: 1rem;
+  border: 2px solid rgba(155, 155, 155, 0.46);
+  background: rgba(246, 246, 246, 0.36);
+  mix-blend-mode: normal;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(67.95704650878906px);
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* 图标均匀分布 */
+}
+
+.skill {
+  height: 77%; /* 图标的高度是框的77% */
+  aspect-ratio: 1 / 1; /* 保证图标是正方形 */
+}
