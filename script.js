@@ -46,3 +46,29 @@ function showZoomedImage(src) {
         modal.remove();
     });
 }
+document.addEventListener('DOMContentLoaded', (event) => {
+    var draggedElement = document.getElementById('C1469526797');
+    var startX, startY;
+
+    draggedElement.addEventListener('mousedown', (e) => {
+        // 记录起始位置
+        startX = e.clientX - draggedElement.getBoundingClientRect().left;
+        startY = e.clientY - draggedElement.getBoundingClientRect().top;
+
+        // 当鼠标移动时，调用 onMouseMove 函数
+        document.addEventListener('mousemove', onMouseMove);
+    });
+
+    function onMouseMove(e) {
+        // 更新黄色框的位置
+        draggedElement.style.left = (e.clientX - startX) + 'px';
+        draggedElement.style.top = (e.clientY - startY) + 'px';
+    }
+
+    // 当鼠标松开时移除事件监听器
+    document.addEventListener('mouseup', () => {
+        document.removeEventListener('mousemove', onMouseMove);
+    });
+});
+
+
