@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Grid</title>
+    <style>
+        html {
+            background-color: black;
+            
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .grid-item {
+            text-align: center;
+            color: azure;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1; /* 保持图片为正方形 */
+            object-fit: cover;
+        }
+
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="1.jpg" alt="Image 1">
+            <p>空间构成1</p>
+        </div>
+        <div class="grid-item">
+            <img src="2.jpg" alt="Image 2">
+            <p>空间构成2</p>
+        </div>
+        <!-- 更多 grid-item 元素 -->
+        <div class="grid-item">
+            <img src="3.jpg" alt="Image 9">
+            <p>传统图案1</p>
+        </div>
+        <div class="grid-item">
+            <img src="5.jpg" alt="Image 9">
+            <p>传统图案2</p>
+        </div>
+        <div class="grid-item">
+            <img src="4.jpg" alt="Image 9">
+            <p>建模作业</p>
+        </div>
+    </div>
+</body>
+</html>
