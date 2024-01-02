@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow:hidden;
+  overflow: hidden;
 }
 .toolbar {
   background-color: rgba(0, 0, 0, 0.4); /* 调整为与你的颜色匹配 */
@@ -144,6 +144,12 @@ body, html {
   display: flex;
   flex-direction: column;
 }
+[id="C1469526797"] .page-content {
+  /* 其他样式保持不变 */
+  width: 30%; /* 固定宽度 */
+  height: 20%; /* 固定高度 */
+}
+
 
 .dock {
   position: fixed;
